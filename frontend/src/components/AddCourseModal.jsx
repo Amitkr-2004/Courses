@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import api from '../api/api';
 import { toast } from 'react-toastify';
-import '../css/EnrollModal.css';
+import '../css/AddCourseModal.css';
 
-const EnrollModal = ({ onClose }) => {
+const AddCourseModal = ({ onClose, onCourseAdded }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    grade: '',
-    school: '',
+    title: '',
+    description: '',
+    category: '',
   });
 
   const handleChange = (e) => {
@@ -16,13 +16,14 @@ const EnrollModal = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    api.post('/enrollment/', formData)
+    api.post('/courses/', formData)
       .then(() => {
-        toast.success('Enrolled successfully!');
+        toast.success('Course added successfully!');
+        onCourseAdded();
         onClose();
       })
       .catch((error) => {
-        console.error('Error enrolling:', error);
+        console.error('Error adding course:', error);
       });
   };
 
@@ -30,37 +31,37 @@ const EnrollModal = ({ onClose }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>X</button>
-        <h2>Enroll Now</h2>
+        <h2>Add New Course</h2>
         <form onSubmit={handleSubmit}>
-          <label>Name</label>
+          <label>Title</label>
           <input
             type="text"
-            name="name"
-            value={formData.name}
+            name="title"
+            value={formData.title}
             onChange={handleChange}
             required
           />
-          <label>Grade</label>
-          <input
-            type="number"
-            name="grade"
-            value={formData.grade}
+          <label>Description</label>
+          <textarea
+            name="description"
+            value={formData.description}
             onChange={handleChange}
+            rows="3"
             required
           />
-          <label>School</label>
+          <label>Category</label>
           <input
             type="text"
-            name="school"
-            value={formData.school}
+            name="category"
+            value={formData.category}
             onChange={handleChange}
             required
           />
-          <button type="submit" className="btn btn-enroll">Submit</button>
+          <button type="submit" className="btn btn-enroll">Add Course</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default EnrollModal;
+export default AddCourseModal;

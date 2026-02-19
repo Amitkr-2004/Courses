@@ -4,7 +4,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,26 +14,59 @@
 
 .modal-content {
   background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  width: 450px;
+  padding: 32px;
+  border-radius: 14px;
+  width: 460px;
   max-width: 90%;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: modalSlideIn 0.2s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.3rem;
+  color: #1a1a2e;
+}
+
+.modal-content p {
+  margin: 0 0 10px 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .modal-close {
   position: absolute;
-  top: 10px;
-  right: 14px;
-  background: none;
+  top: 12px;
+  right: 16px;
+  background: #f0f0f0;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  color: #333;
+  color: #555;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
 .modal-close:hover {
-  color: #e74c3c;
+  background: #e74c3c;
+  color: #fff;
 }

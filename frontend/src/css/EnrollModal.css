@@ -1,30 +1,35 @@
 .modal-content form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 6px;
+  margin-top: 20px;
 }
 
 .modal-content label {
   font-weight: 600;
-  font-size: 0.9rem;
-  color: #333;
+  font-size: 0.85rem;
+  color: #444;
+  margin-top: 6px;
 }
 
 .modal-content input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 0.95rem;
+  padding: 11px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
   outline: none;
+  transition: border-color 0.2s ease;
+  background: #fafafa;
 }
 
 .modal-content input:focus {
   border-color: #4361ee;
+  background: #fff;
 }
 
 .modal-content .btn-enroll {
-  margin-top: 8px;
-  padding: 10px;
-  font-size: 1rem;
+  margin-top: 14px;
+  padding: 12px;
+  font-size: 0.95rem;
+  border-radius: 8px;
 }
