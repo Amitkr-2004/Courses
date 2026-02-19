@@ -1,0 +1,53 @@
+.course-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-title {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  color: #1a1a2e;
+}
+
+.course-description {
+  margin: 0 0 16px 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.course-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-detail {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-detail:hover {
+  background: #d0d0d0;
+}
+
+.btn-enroll {
+  background: #4361ee;
+  color: #fff;
+}
+
+.btn-enroll:hover {
+  background: #3a56d4;
+}
