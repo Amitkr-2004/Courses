@@ -1,0 +1,30 @@
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.modal-content label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.modal-content input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.modal-content input:focus {
+  border-color: #4361ee;
+}
+
+.modal-content .btn-enroll {
+  margin-top: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
